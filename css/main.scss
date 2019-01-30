@@ -1,0 +1,22 @@
+// Цвета
+// $orange: #e45028;
+$yellow: #f9b43b;
+$black: #2f3234;
+$red: #e35028;
+
+//Normalize
+@import "./_misc/normalize.scss";
+
+//Настройки
+@import "./_misc/fonts";
+@import "./_misc/layout";
+
+//Блоки
+@import "./blocks/header.scss";
+@import "./blocks/hero.scss";
+@import "./blocks/btn.scss";
+@import "./blocks/title.scss";
+@import "./blocks/features.scss";
+@import "./blocks/reviews.scss";
+@import "./blocks/order.scss";
+@import "./blocks/fixed-menu.scss";

@@ -1,0 +1,32 @@
+.features {
+    background: url(../../img/bg/features-bg.jpg) center center / cover no-repeat;
+}
+.title_black {
+    color: $black;
+    text-align: center;
+    margin-top: 134px;
+}
+.features__list {
+    display: flex;
+    margin-top: 50px;
+}
+.features__item {
+    flex: 1;                        // эффект будет тот же, что и при width:33.3%
+    margin-right: 15px;
+    text-align: center;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+.features__icon {
+   display: inline-block;
+}
+.features__desc-title {
+    font-family: "Lifehack-Medium";
+    font-size: 24px;
+}
+.features__desc-content {
+    font-family: "Ubuntu-Light";
+    font-size: 14px;
+    margin-top: 12px;
+}
