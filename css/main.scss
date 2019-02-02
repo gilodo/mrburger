@@ -1,5 +1,5 @@
 // Цвета
-// $orange: #e45028;
+$orange: #e45028;
 $yellow: #f9b43b;
 $black: #2f3234;
 $red: #e35028;
@@ -20,3 +20,6 @@ $red: #e35028;
 @import "./blocks/reviews.scss";
 @import "./blocks/order.scss";
 @import "./blocks/fixed-menu.scss";
+@import "./blocks/team.scss";
+@import "./blocks/how-we-work.scss";
+@import "./blocks/menu.scss";

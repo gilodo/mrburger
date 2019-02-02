@@ -1,20 +1,160 @@
 .order {
-    background: url(../../img/bg/order-bg.jpg) center center no-repeat / cover;
+    background: url("../../img/bg/order-bg.jpg") center center no-repeat / cover;
+    padding: 138px 79px 144px 79px;
+}
+.order-title {
+    text-align: center;
+}
+.form {
+	display: flex;
+	justify-content: center;
 }
 .form__row {
     display: flex;
 }
-.form__block {
-    margin-right: 20px;
-    flex: 1;
-    &:last-child {
-        margin-right: 0;
-    }
+// .form__field-name {
+//     margin-right: 20px;
+//     flex: 1;
+//     &:last-child {
+//         margin-right: 0;
+//     }
+// }
+.form__field-name {
+    font-family: "Ubuntu-Light";
+    font-size: 14px;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	margin-top: 40px;
 }
-.form__block_input {
+.form__input {
     border-radius: 5px;
     background: #fff;   
     border: none;
-    width: 100%;
     padding: 5px 10px;
+	margin-right: 20px;
+	&:focus {
+		outline: $yellow;
+	}
+}
+.form__input_name,.form__input_phone {
+    width: 220px;    
+}
+.form__input_street {
+    width: 460px;
+}
+.form__input_house,.form__input_building,
+.form__input_appartment,.form__input_floor {
+    width: 100px;
+}
+.form__input_comments {
+    width: 460px;
+    height: 111px;
+    resize: none;
+}
+.form__radios {							// Обёртка радиокнопок (строка №313)
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin-top: 20px;
+}
+.form__radio {							// Лэйблы (строки №314, 319)	
+	display: flex;
+	margin-right: 20px;
+	position: relative;					// Задаётся сюда, т.к. это родитель
+}
+.form__radio-elem {						// Настоящие нестилизуемые радиокнопки (строки №315, 320)
+	position: absolute;
+	left:-9999px;
+}
+.form__radio-fake {						// Самодельные кружки радиокнопок (строки №316, 321)
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 1px solid #cacaca;
+	position: relative;					// Нужно для позиционирования точки внутри кружка радиокнопки
+	margin-right: 5px;
+	cursor: pointer;
+}
+.form__radio-title {
+	color: #fff;
+}
+.form__radio-fake::after {				// Пустота внутри неактивной радиокнопки
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: $orange;
+}
+.form__radio-elem:checked + .form__radio-fake::after { // Активная самодельная точка в радиокнопке
+	width: 8px;							// Переопределяются свойства размеров из предыдущего правила
+	height: 8px;		
+}
+.form__radio-elem:checked + .form__radio-fake {	// Активный кружок оранжевого цвета для радиокнопки
+	border-color: $orange;
+}
+.form__radio-elem:checked + .form__radio-fake + .form__radio-title {
+	color: $orange;;
+}
+input[type="radio"] {
+	display: inline-block;
+}
+.form__radio-title {
+	font-size: 14px;
+	font-weight: 300;	
+}
+input[type="checkbox"]:checked, 					// Убирание стандартного отображения элемента за область видимости
+input[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+input[type="checkbox"]:checked + label, 			// Отступ для метки
+input[type="checkbox"]:not(:checked) + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    cursor: pointer;
+}
+input[type="checkbox"]:checked + label:before, 		// Квадрат для чекбокса
+input[type="checkbox"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #dddddd;
+	background-color: #ffffff;
+	border-radius: 2px;
+}
+input[type="checkbox"]:checked + label:after, 		// Галка для квадрата чекбокса
+input[type="checkbox"]:not(:checked) + label:after {
+    content: "";
+    position: absolute;
+	transition: all 0.2s ease;
+	left: 3px;
+    top: 3px;
+    width: 10px;
+    height: 5px;
+    border-radius: 1px;
+    border-left: 4px solid $orange;
+    border-bottom: 4px solid $orange;
+    transform: rotate(-45deg);
+}
+input[type="checkbox"]:not(:checked) + label:after{		// Сокрытие неактивной галки (до выбора)
+    opacity: 0;
+}
+input[type="checkbox"]:checked + label:after {			// Отображение галки при выборе
+    opacity: 1;
+}
+.form__radio-title,.form__checkbox-title {
+	font-family: "Ubuntu-Light";
+	font-size: 14px;
+	color: #fff;
+	white-space: nowrap;
 }

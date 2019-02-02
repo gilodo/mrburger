@@ -20,6 +20,8 @@
 }
 .features__icon {
    display: inline-block;
+   width: 100px;                /* Без указаний ширины и высоты иконка мяса отодвигала текст под собой и сама смещалась влево */
+   height: 100px;                 
 }
 .features__desc-title {
     font-family: "Lifehack-Medium";

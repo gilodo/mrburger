@@ -31,13 +31,13 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="main-content"> <!-- <Нужен для реализации OnePageScroll -->
+        <iv class="main-content"> <!-- <Нужен для реализации OnePageScroll -->
             <section class="section hero">
                 <div class="container hero__container">
                     <header class="header">
-                        <div class="logo">
+                        <a class="logo" href="index.html">
                             <img src="./img/icons/logo.svg" alt="Логотип">
-                        </div>
+                        </a>
                         <div class="header__buttons">
                             <nav class="menu">
                                 <ul class="menu__list">
@@ -83,11 +83,13 @@
             </section>
             <section class="section section__centered features">
                 <div class="container">
-                    <div class="title title_black">Мы лучшие</div>
+                    <h1 class="title title_black">Мы лучшие</h1>
                     <ul class="features__list">
                         <li class="features__item">
                             <div class="features__img">
-                                <img src="./img/icons/meat.svg" class="features__icon" alt="Свежее мясо">
+                                <svg class="features__icon">
+                                    <use xlink:href="./img/icons/sprite.svg#meat"></use>
+                                </svg>   
                             </div>
                             <div class="features__desc">
                                 <div class="features__desc-title">100% свежее мясо</div>
@@ -127,6 +129,103 @@
                     </ul>
                 </div>
             </section>
+            <section class="section team">
+                <div class="team__cards">
+                    <div class="team__wrapper">
+                        <div class="title margins_title">
+                            Команда
+                        </div>
+                        <ul class="accordeon__list">
+                            <li class="accordeon__item">
+                                <div class="accordeon__name">
+                                    Дэниэл Редклиф
+                                </div>
+                                <div class="accordeon__card passive">
+                                    <div class="accordeon__img">
+                                        <img class="accordeon__avatar" src="#" alt="Фотография сотрудника">
+                                    </div>
+                                    <div class="accordeon__text">
+                                        <div class="accordeon__job">
+                                            Lorem ipsum    
+                                        </div>
+                                        <div class="accordeon__desc">
+                                            Ipsum lorem
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </li>
+                            <li class="accordeon__item">
+                                <div class="accordeon__name">
+                                    Ричард Джеймс
+                                </div>
+                                <div class="accordeon__card active">
+                                    <div class="accordeon__img">
+                                        <img class="accordeon__avatar" src="./img/avatars/richard-avatar.png" alt="Фотография сотрудника">
+                                    </div>
+                                    <div class="accordeon__text">
+                                        <div class="accordeon__job">
+                                            Оператор
+                                        </div>
+                                        <div class="accordeon__desc">
+                                            С радостью поможет подобрать идеальный бургер и оформить заказ.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordeon__item">
+                                <div class="accordeon__name">
+                                    Джейк Финн
+                                </div>
+                                <div class="accordeon__card passive">
+                                    <div class="accordeon__img">
+                                        <img class="accordeon__avatar" src="#" alt="Фотография сотрудника">
+                                    </div>
+                                    <div class="accordeon__text">
+                                        <div class="accordeon__job">
+                                            Lorem ipsum    
+                                        </div>
+                                        <div class="accordeon__desc">
+                                            Ipsum lorem
+                                        </div>
+                                    </div>
+                                </div>                                  
+                            </li>
+                            <li class="accordeon__item">
+                                <div class="accordeon__name">
+                                    Николай Иванов
+                                </div>
+                                <div class="accordeon__card passive">
+                                    <div class="accordeon__img">
+                                        <img class="accordeon__avatar" src="#" alt="Фотография сотрудника">
+                                    </div>
+                                    <div class="accordeon__text">
+                                        <div class="accordeon__job">
+                                            Lorem ipsum    
+                                        </div>
+                                        <div class="accordeon__desc">
+                                            Ipsum lorem
+                                        </div>
+                                    </div>
+                                </div>                                  
+                            </li>
+                        </ul>        
+                    </div>
+                </div>
+            </section>
+            <section class="section menu">
+                <div class="menu-main">
+                    <h1 class="title title_menu">Меню</h1>
+                </div>
+                <div class="menu-meatarian">
+                    <span>Для мясоедов</span>
+                </div>
+                <div class="menu-vegetarian">
+                    <span>Вегетарианские</span>
+                </div>
+                <div class="menu-dietetic">
+                    <span>Диетические</span>
+                </div>
+            </section>
             <section class="section reviews">
                 <ul class="reviews__list">
                     <li class="reviews__item" style="background-image: url(./img/content/reviews/1.jpg)"></li>
@@ -154,18 +253,76 @@
                 </ul>
 
             </section>
+            <section class="section section_centered how-we-work">
+                <h1 class="title mtop_title">
+                    Как мы работаем
+                </h1>
+                <div class="video">
+                    <div class="video-img">
+
+                    </div>
+                </div>
+            </section>
+
             <section class="section section_centered order">
-                <div class="title">Закажите доставку</div>
+                <div class="title order-title">Закажите доставку</div>
                 <form action="" class="form">
-                    <div class="form__row">
-                        <label for="" class="form__block">
-                            <div class="form__block-title">Имя</div>
-                            <input type="text" class="form__block_input">
-                        </label>
-                        <label for="" class="form__block">
-                            <div class="form__block-title">Имя</div>
-                            <input type="text" class="form__block_input">
-                        </label>
+                    <div class="form__left">
+                        <div class="form__row">
+                            <label for="form__input_name" class="form__field-name">Имя
+                                <input type="text" class="form__input form__input_name" id="form__input_name">
+                            </label>
+                            <label for="form__input_phone" class="form__field-name">Телефон
+                                <input type="text" class="form__input form__input_phone" id="form__input_phone" placeholder="89212264923">
+                            </label>
+                        </div>
+                        <div class="form__row">
+                            <label for="form__input_name" class="form__field-name">Улица
+                                <input type="text" class="form__input form__input_street" id="form__input_name">
+                            </label>
+                        </div>
+                        <div class="form__row">
+                            <label for="form__input_name" class="form__field-name">Дом
+                                <input type="text" class="form__input form__input_house" id="form__input_name">
+                            </label>
+                            <label for="form__input_name" class="form__field-name">Корпус
+                                <input type="text" class="form__input form__input_building" id="form__input_name">
+                            </label>
+                            <label for="form__input_name" class="form__field-name">Квартира
+                                <input type="text" class="form__input form__input_appartment" id="form__input_name">
+                            </label>
+                            <label for="form__input_name" class="form__field-name">Этаж
+                                <input type="text" class="form__input form__input_floor" id="form__input_name">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form__right">
+                        <div class="form__row">
+                            <label for="form__input_name" class="form__field-name">Комментарий
+                                <input type="textarea" class="form__input form__input_comments" id="form__input_name">
+                            </label>    
+                        </div>
+                        <div class="form__row">
+                            <div class="form__radios">
+                                <label class="form__radio" for="change-required">
+                                    <input type="radio" name="payment" value="change-required" class="form__radio-elem" id="change-required">
+                                    <div class="form__radio-fake"></div>
+                                    <div class="form__radio-title">Потребуется сдача</div>  
+                                </label>
+                                <label class="form__radio" for="bank-card">
+                                    <input type= "radio" name="payment" value="bank-card" class="form__radio-elem" id="bank-card" checked>
+                                    <div class="form__radio-fake"></div>
+                                    <div class="form__radio-title">Оплата по карте</div>  
+                                </label>
+                            </div>                            
+                        <div class="form__row">
+                            <input type="checkbox" id="callback-not-required"> 
+                            <label class="form__checkbox-title" for="callback-not-required">Не перезванивать</label>
+                            <!-- <label class="form__checkbox" for="callback">
+                                <input type="checkbox" name="callback" value="callback-not-required" class="form__checkbox" id="callback" checked>
+                                <div class="checkbox__text">Не перезванивать</div>
+                            </label> -->
+                        </div>                            
                     </div>
                 </form>
             </section>
@@ -185,7 +342,7 @@
                 <li class="fixed-menu__item"></li>
             </ul>
         </nav>
-    </div>    
+    </iv>    
 
  
 </body>

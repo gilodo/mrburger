@@ -1,0 +1,57 @@
+.team {
+    background: url("../../img/bg/team-bg.jpg") center center /cover no-repeat;
+    position: relative;
+}
+.team__wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    background:rgba(44,47,49,0.93);  
+} 
+.margins_title {
+    margin-top: 114px;
+    margin-left: 97px;
+}
+.accordeon__list {
+    margin-top: 62px;
+    margin-left: 97px;
+}
+.accordeon__name::before {
+    margin-right: 13px;
+    width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 100px solid $yellow;
+}
+.accordeon__name {
+    font-family: "Gagalin-Regular";
+    color: #fff;
+    margin-top: 38px;
+}
+.accordeon__card {
+    display: flex;
+    margin-top: 19px;
+}
+.passive.accordeon__card {
+    height: 0;
+    overflow: hidden;
+}
+.accordeon__text {
+    margin-left: 22px;
+    font-size: 14px;
+    color: #fff;
+    width: 210px;
+}
+.accordeon__job {
+    font-family: "Ubuntu-Bold";
+}
+.accordeon__desc {
+    margin-top: 10px;
+    font-family: "Ubuntu-Light";
+    line-height: 2;
+}

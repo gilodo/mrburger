@@ -1,5 +1,5 @@
 .hero {
-    background: url('../../img/bg/hero-bg.jpg') center center / cover no-repeat;
+    background: url("../../img/bg/hero-bg.jpg") center center / cover no-repeat;
 }
 .hero__container {
     display: flex;
@@ -13,10 +13,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: -100px;
     flex: .75;
 }
 .hero__content-desc {
     color: #fff;
     font-size: 55px;
     font-family: "Lifehack-Medium";
+    margin-top: -50px;   
+    margin-bottom: -28px;
 }
