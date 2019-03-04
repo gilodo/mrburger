@@ -1,10 +1,23 @@
+html {
+  font-size: 16px; // Добавлено для адаптивной версии
+
+  @include tablets() {
+    // Добавлено для адаптивной версии
+    font-size: 14px;
+  }
+  @include phones() {
+    // Добавлено для адаптивной версии
+    font-size: 13px;
+  }
+}
+
 html,
 body {
   height: 100%;
 }
 
 body {
-  font-size: 16px;
+  font-size: rem(16px);
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,25 +27,33 @@ body {
 
 .wrapper {
   overflow: hidden;                 // Гарантия того, что не появится горизонтальный скролл
-  min-height: 100%;                 // Нужно для прибития футера                           
+  height: 100%;                     // Убирает вертикальный скрол (для One Page Scroll)
   width: 100%;
-  min-width: 940px + 20px;  
+  // min-width: 960px;              // Убрано для адаптивной версии
   position: relative;
 }
-
+.main-content {
+  height: 100%;
+  transition: transform 1s;
+  will-change: transform;           // Выносит блок на отдельный компонентный слой (слои, которыми браузер рендерит страницу)
+}
 .container {
-  width: 940px;
-  margin: 0 auto;
-
+  // width: 940px;                  // Убрано для адаптивной версии
   position: relative;
-    // width: 95%;
+  max-width: rem(940px);
+  margin: 0 auto;
+  position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  @include phones {
+    width: 95%;
+  }
 }
 
 .section {
   height: 100vh;
-  min-height: 650px;
+  min-height: rem(650px);
 
   &_centered {
     title {
@@ -87,7 +108,7 @@ footer {
 }
 
 .section {
-  min-height: 650px;
+  min-height: rem(650px);
 
   &_centered {
     display: flex;
@@ -97,16 +118,15 @@ footer {
 }
 
 .section-title {
-  font-size: 72px;
+  font-size: rem(72px);
   // @include gagalin();
   // color: $yellow;
-  margin-bottom: 40px;
+  margin-bottom: rem(40px);
 
   &_color {
     &_black {
       // color: $black;
     }
-
   }
 
   &_position {

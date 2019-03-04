@@ -1,34 +1,48 @@
 .features {
     background: url(../../img/bg/features-bg.jpg) center center / cover no-repeat;
 }
-.title_black {
-    color: $black;
-    text-align: center;
-    margin-top: 134px;
+.features__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .features__list {
     display: flex;
-    margin-top: 50px;
+    margin-top: rem(50px);
+    @include phones {
+        flex-direction: column;
+    }
 }
 .features__item {
     flex: 1;                        // эффект будет тот же, что и при width:33.3%
-    margin-right: 15px;
+    margin-right: rem(15px);
     text-align: center;
     &:last-child {
         margin-right: 0;
     }
+    @include phones {
+        display: flex;
+        justify-content: space-around;
+        text-align: left;
+        margin-bottom: rem(50px);
+    }
 }
 .features__icon {
    display: inline-block;
-   width: 100px;                /* Без указаний ширины и высоты иконка мяса отодвигала текст под собой и сама смещалась влево */
-   height: 100px;                 
+   width: rem(100px);                /* Без указаний ширины и высоты иконка мяса отодвигала текст под собой и сама смещалась влево */
+   height: rem(100px);
+   @include phones {
+       padding: rem(0px) (20px);
+       margin-right: rem(25px);
+   }                 
 }
 .features__desc-title {
     font-family: "Lifehack-Medium";
-    font-size: 24px;
+    font-size: rem(24px);
 }
 .features__desc-content {
     font-family: "Ubuntu-Light";
-    font-size: 14px;
-    margin-top: 12px;
+    font-size: rem(14px);
+    margin-top: rem(12px);
 }

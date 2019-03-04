@@ -10,48 +10,81 @@
     bottom: 0;
     width: 50%;
     height: 100%;
-    background:rgba(44,47,49,0.93);  
+    background:rgba(44,47,49,0.93);
+    padding: rem(113px) rem(97px) rem(146px) rem(99px);
+    @include tablets {
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+     
+    }
 } 
-.margins_title {
-    margin-top: 114px;
-    margin-left: 97px;
-}
 .accordeon__list {
-    margin-top: 62px;
-    margin-left: 97px;
+    margin-left: rem(20px);
+    @include tablets {
+        text-align: center;
+    }
 }
-.accordeon__name::before {
-    margin-right: 13px;
-    width: 0;
-	height: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-top: 100px solid $yellow;
+.accordeon__item {
+    margin-bottom: rem(38px);
+    cursor: pointer;
+    &:last-child {
+        margin-bottom: 0;
+    }    
 }
 .accordeon__name {
     font-family: "Gagalin-Regular";
     color: #fff;
-    margin-top: 38px;
+    position: relative;
+    display: inline-flex;                      // Для выравнивания треугольничков по центру. Блок занимает не всю ширину, а только ширину равную ширине текста внутри блока
 }
-.accordeon__card {
-    display: flex;
-    margin-top: 19px;
-}
-.passive.accordeon__card {
+.accordeon__name::before {
+    content: '';   
+    display: block;
+    position: absolute;
+    left: rem(-19px);
+    top: rem(9px);
+    width: 0;
     height: 0;
-    overflow: hidden;
+    border-top: rem(7px) solid $yellow;
+    border-right: rem(5px) solid transparent;
+    border-left: rem(5px) solid transparent;
+    transform: rotate(0deg);
+    transition: 0.3s;
+}
+.accordeon__item.active .accordeon__name::before {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+.accordeon__person {
+    display: none;
+    margin-top: rem(19px);
+}
+.accordeon__item.active .accordeon__person {
+    display: flex;
+    align-items: center;
+    @include tablets {
+        flex-direction: column;
+    }
+}
+.accordeon__item.active .accordeon__name {
+    color: $yellow;
 }
 .accordeon__text {
-    margin-left: 22px;
-    font-size: 14px;
+    margin-left: rem(22px);
+    font-size: rem(14px);
     color: #fff;
-    width: 210px;
+    width: rem(210px);
 }
 .accordeon__job {
     font-family: "Ubuntu-Bold";
 }
 .accordeon__desc {
-    margin-top: 10px;
+    margin-top: rem(10px);
     font-family: "Ubuntu-Light";
     line-height: 2;
 }

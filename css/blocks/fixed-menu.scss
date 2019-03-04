@@ -1,16 +1,19 @@
 .fixed-menu {
     position: fixed;
-    top: 92px;
-    right: 50px;
+    top: rem(92px);
+    right: rem(50px);
+    @include tablets {
+        display: none;
+    }
 }
 .fixed-menu__item {
     display: block;
-    width: 16px;
-    height: 16px;
-    border: 1px solid transparent;
+    width: rem(16px);
+    height: rem(16px);
+    border: rem(1px) solid transparent;
     position: relative;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: rem(10px);
     &:hover {
         border-color: #fff;
         cursor: pointer;
@@ -21,8 +24,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 6px; 
-        height: 6px;
+        width: rem(6px); 
+        height: rem(6px);
         border-radius: 50%;
         background: #fff;
     }

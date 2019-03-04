@@ -7,6 +7,9 @@ $red: #e35028;
 //Normalize
 @import "./_misc/normalize.scss";
 
+// Адаптив
+@import "./media.scss";
+
 //Настройки
 @import "./_misc/fonts";
 @import "./_misc/layout";
@@ -17,9 +20,15 @@ $red: #e35028;
 @import "./blocks/btn.scss";
 @import "./blocks/title.scss";
 @import "./blocks/features.scss";
+@import "./blocks/burgers.scss";
+@import "./blocks/owl.carousel.scss";
 @import "./blocks/reviews.scss";
+@import "./blocks/modal.scss";
 @import "./blocks/order.scss";
 @import "./blocks/fixed-menu.scss";
 @import "./blocks/team.scss";
 @import "./blocks/how-we-work.scss";
+@import "./blocks/player.scss";
 @import "./blocks/menu.scss";
+@import "./blocks/map.scss";
+@import "./blocks/footer.scss";

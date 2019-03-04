@@ -1,8 +1,25 @@
 .title {
-    font-size: 72px;
+    font-size: rem(72px);
     color: $yellow;
     font-family: 'Gagalin-Regular';
     line-height: 1.1;
-    margin-bottom: 45px;
-    // margin-top: 119px;
+}
+.hero__title {
+    margin-bottom: rem(45px);
+}
+.features__title {
+    color: $black;
+    text-align: center;
+}
+.team__title {
+    margin-bottom: rem(60px);
+}
+.menu__title {
+    color: #fff;
+    padding-top: rem(109px);
+    padding-left: rem(93px);
+}
+.how-we-work__title {
+    color: $black;
+    text-align: center;
 }

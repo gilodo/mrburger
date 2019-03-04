@@ -17,6 +17,10 @@
     background: center center / cover no-repeat;
     position: relative;
     filter: grayscale(100%);
+    @include tablets {
+        width: 50%;
+        height: 25%;
+    }
 
     &:hover {
         .reviews__item-hover {
@@ -32,24 +36,24 @@
     right: 0;
     bottom: 0;
     background: rgba(#000, .5);
-    padding: 10px;
+    padding: rem(10px);
     color: #fff;
     opacity: 0;
     transition: opacity .3s;
-    padding: 45px 32px
+    padding: rem(45px) rem(32px)
 }
 .reviews__title {
     font-family: 'Gagalin-Regular';
-    font-size: 14px;
+    font-size: rem(14px);
 }
 .reviews__text {
-    margin-top: 28px;
+    margin-top: rem(28px);
     font-family: "Ubuntu-Light";
-    font-size: 14px;
+    font-size: rem(14px);
     line-height: 2;
-    margin-bottom: 17px;    
+    margin-bottom: rem(17px);    
 }
 .btn_background_black {
-    padding: 11px;
+    padding: rem(11px);
     background: #2f3234; 
 }

@@ -7,19 +7,31 @@
     height: 100%;
 }
 .hero__order-btn {
-    margin-left: 15px;
+    margin-left: rem(15px);
 }
 .hero__content {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -100px;
+    margin-top: rem(-100px);
     flex: .75;
+    @include tablets {                  
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.hero__burger-img {
+    max-width: 100%;                    // Без этого картинка не сжималась
+}
+.hero__content-text {                   
+    @include tablets {
+        text-align: center;
+    }
 }
 .hero__content-desc {
     color: #fff;
-    font-size: 55px;
+    font-size: rem(55px);
     font-family: "Lifehack-Medium";
-    margin-top: -50px;   
-    margin-bottom: -28px;
+    margin-top: rem(-50px);   
+    margin-bottom: rem(-28px);
 }

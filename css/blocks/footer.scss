@@ -1,0 +1,63 @@
+.map {
+    position: relative;
+}
+.contacts {
+    background: #000;
+    padding: rem(10px);
+    position: absolute;
+    // top: calc(100vh - 60px);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: rem(60px) !important;
+}
+.contacts__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include phones {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.contacts__address {
+    font-family: "Ubuntu-Light";
+    font-size: rem(14px);
+    color: #fff;
+    font-style: normal;
+}
+.contacts__phone {
+    font-family: "Ubuntu-Bold";
+    font-size: rem(14px);
+    color: #e45028;
+    text-decoration: none;
+}
+.contacts__phone {
+    margin-right: rem(7px);
+    @include phones {
+        display: block;
+        margin-top: rem(13px);
+        margin-bottom: rem(23px);
+    }
+}
+.contacts__phone img {
+    width: rem(12px);
+    height: rem(11px);
+}
+.contacts__socials {
+    display: flex;
+}
+svg {
+    width: rem(20px);
+    height: rem(20px);
+    margin-right: rem(20px);
+    fill: #595959;
+    opacity: 0.3;
+    &:hover {
+        fill: #fff;
+        opacity: 1;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+}

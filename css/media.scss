@@ -1,0 +1,20 @@
+// Брейкпоинты
+$tablets: 768px;
+$phones: 480px;
+
+// Функция перевода пикселей в remы
+@function rem($px) {
+  @return $px / 16px + 0rem;
+}
+// Миксин для планшетов
+@mixin tablets() {
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+// Миксин для мобильных телефонов
+@mixin phones() {
+  @media screen and (max-width: $phones) {
+    @content;
+  }
+}
