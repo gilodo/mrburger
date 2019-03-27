@@ -1,5 +1,5 @@
 .how-we-work {
-    background: url("../../img/bg/how-we-work-bg.jpg") center center /cover no-repeat;
+    background: url("../img/bg/how-we-work-bg.jpg") center center /cover no-repeat;
     width: 100%;
 }
 .video {
@@ -11,4 +11,40 @@
     @include tablets {
         white-space: normal;
     }
+}
+.player__mute {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/icons/volume.svg');
+    background-color: transparent;
+    border: none;
+    
+    position: absolute;
+    left: 60%;
+}
+.player__playback-vol {
+/*    @extend .player__playback*/
+    position: absolute;
+    height: 4px;
+    width: 100px;
+    background: #626262;
+    top: 15px;
+    left: 65%;
+    
+}
+.player__playback-button-vol {
+  background: #626262;
+    border-radius: 50px;
+    border: none;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    position: absolute;
+    top: -4px;
+    transform: translateX(-50%);
+    left: 0;  
+}
+.player__playback {
+    width: 346px;
 }

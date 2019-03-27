@@ -83,8 +83,9 @@ $('[data-scroll-to]').on('click', e => {                        // Блок пр
 
 
   performTransition(target);                                    // Переход к нужной секции
+  console.log(e.currentTarget);  
 
-})
+});
 
 // $(window).swipe({
 //   swipe: function(event, direction) {
@@ -127,10 +128,10 @@ $(document).ready(function() {
   owl.owlCarousel({
     center: true,
     items: 1,
-    loop: true
-    // autoplay: true,
-    // autoplayTimeout: 3000,
-    // navSpeed: 1000
+    loop: true,
+     autoplay: true,
+     autoplayTimeout: 3000,
+     navSpeed: 1000
   });
   // Следующий слайд
   $(".next").click(function() {
@@ -326,24 +327,86 @@ function formatTime(time) {                     // Функция преобра
   return minutes + ":" + formatedSeconds;       // Возвращает минуты, ':' и отформатированные (см. выше) секунды
 }
 
+function editVolume() {
+    
+    changeVolumePosition(100);
+    
+   function changeVolumePosition(percents) {
+       $('.player__playback-button-vol').css({
+           left: percents + '%'
+       });
+       
+   } 
+    
+    $('.player__playback-vol').on('click', function(e){
+        e.preventDefault();
+        const barVolume = $(e.currentTarget);
+        const newButtonPosition = e.pageX - barVolume.offset().left;
+        const clickVolumePercents = newButtonPosition / barVolume.width() * 100;
+        
+        changeVolumePosition(clickVolumePercents);
+        player.setVolume(clickVolumePercents);
+        
+    });
+}
+editVolume();
+
+$('.player__mute').on('click', function() {
+       const mute = player.isMuted();
+if (mute) {
+    player.unMute();
+    changeVolumePosition(player.getVolume());
+} else {
+    player.mute();
+    changeVolumePosition(0);
+}
+
+       });
 
 // ФОРМА ДОСТАВКИ СЕКЦИИ ORDER
-// const deliveryForm = document.getElementById("order-form");
+ const deliveryForm = document.getElementById("order-form");
 
-// deliveryForm.onsubmit = function(event) {
-//     event.preventDefault();
-//     const formData = new FormData(deliveryForm);
-//     formData.append("to", "superemail@mail.ru");
-//     const request = new XMLHttpRequest();
-//     request.open("POST", "https://webdev-api.loftschool.com/sendmail");
-//     request.send(formData);
-//     request.addEventListener("load", function () {
-//         const response = JSON.parse(request.response);
-//         if (response.status) {
+ deliveryForm.onsubmit = function(event) {
+     event.preventDefault();
+     const formData = new FormData(deliveryForm);
+     const dataName = document.querySelector('#form__input_name');
+     const dataPhone = document.querySelector('#form__input_phone');
+     const dataComment = document.querySelector('#form__input_comments');
+     
+     const popup = document.querySelector('.popup');
+     const popupTitle = document.querySelector('.popup__title');
+     const popupText = document.querySelector('.popup__text');
+     const popupClose = document.querySelector('.popup__close');
+     
+     formData.append("to", "superemail@mail.ru");
+     formData.append("name", dataName.value);
+     formData.append("phone", dataPhone.value);
+     formData.append("comment", dataComment.value);
+     
+     const request = new XMLHttpRequest();
+     request.open("POST", "https://webdev-api.loftschool.com/sendmail");
+     request.send(formData);
+     request.addEventListener("load", function () {
+         const response = JSON.parse(request.response);
+         if (request.status == 200) {
 //             alert("Благодарим за Ваш заказ!");
-//         };
-//     });
-// };
+
+             popup.classList.add('active');
+             popupText.innerText = response.message;
+             popupTitle.innerText = '';
+             
+         }
+         else {
+             popup.classList.add('active');
+             popupText.innerText = response.message;
+             popupTitle.innerText = '';
+         };
+         
+         popupClose.onclick = ()=> {
+             popup.classList.remove('active');
+         }
+     });
+ };
 
 
 // КАРТА (ЯНДЕКС API)

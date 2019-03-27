@@ -1,5 +1,5 @@
 .order {
-    background: url("../../img/bg/order-bg.jpg") center center no-repeat / cover;
+    background: url("../img/bg/order-bg.jpg") center center no-repeat / cover;
 }
 .order-title {
     text-align: center;
@@ -7,18 +7,27 @@
 .form {
 	display: flex;
 	justify-content: center;
-	max-width: rem(942px);
-	margin-left: 5%;
+	width: 60%;
+    margin: 0 auto;
+    justify-content: space-between;
 	@include tablets {
 		flex-direction: column;
-		// width: initial;
+		width: 90%;
 	}
+}
+.form__right, .form__left {
+    width: 50%;
+}
+.form__left {
+	margin-left: 1%;			
 }
 .form__row {
 	display: flex;
+	justify-content: space-between;
 }
 .form__field-name {
-    font-family: "Ubuntu-Light";
+	width: 100%;
+	font-family: "Ubuntu-Light";
     font-size: rem(14px);
 	color: #fff;
 	display: flex;

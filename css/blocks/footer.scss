@@ -5,11 +5,10 @@
     background: #000;
     padding: rem(10px);
     position: absolute;
-    // top: calc(100vh - 60px);
     bottom: 0;
     left: 0;
     right: 0;
-    height: rem(60px) !important;
+    z-index: 1;
 }
 .contacts__wrapper {
     display: flex;
